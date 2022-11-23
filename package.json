@@ -1,5 +1,6 @@
 {
   "name": "blog-front",
+  "homepage": "http://pjs.or.kr",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -35,6 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://pjs.or.kr"
+  }
 }
