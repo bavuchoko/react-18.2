@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+
+body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
+pre, form, fieldset, textarea, blockquote, span, * {
+    font-family: 'Noto';
+}
+button{
+    display: inherit;
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+}
+@font-face {
+    font-family: "Noto";
+    src:url("../fonts/NotoSerifKR-Regular.otf");
+}
+
+html, body, h1, p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* layout */
+.fixed{
+    position: fixed;
+}
+.zindex-100{
+    z-index: 100;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+.right-30px{
+    right: 30px;
+}
+/* *padding */
+.padding-15-0-0-30{
+    padding: 15px 0 0 30px;
+}
+
+/* *margin */
+.margin-bottom-80px{
+    padding-bottom: 80px;
+}
+.margin-top-15px{
+    margin-top: 15px;
+}
+.margin-top-5px{
+    margin-top: 5px;
+}
+
+.margin-left-15px{
+    margin-left: 15px;
+}
+.margin-left-10px{
+    margin-left: 10px;
+}
+/* display */
+.inline-block{
+    display: inline-block;
+}
+.flex{
+    display: flex;
+}
+
+/* align */
+.margin-0-auto{
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* style */
+.text-deco-none{
+    text-decoration: none;
+}
+
+/* border */
+.boer-solid-1px{
+    border: solid 1px #e5e5e5;
+}
+.border-radius-50per{
+    border-radius: 50%;
+}
+
+/* img */
+.object-fit-none{
+    object-fit: cover;
+}
+
+
+/* font */
+.family-noto-sans{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.bold{
+    font-weight: bold;
+}
+
+.font-color-646464{
+    color: #646464;
+}
+.font-color-7a7a7a{
+    color: #7a7a7a;
+}
+.font-size-16px{
+    font-size: 14px;
+}
+.font-size-13px{
+    font-size: 13px;
+}
+
+
+
+/* action */
+.hover-pointer :hover{
+    cursor: pointer;
+}

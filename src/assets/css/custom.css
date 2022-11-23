@@ -1,0 +1,10 @@
+.blogname{
+    letter-spacing: 0.3px;
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 20px;
+    position: fixed;
+    left: calc(50% - 150px);
+    width: 300px;
+    text-align: center;
+}

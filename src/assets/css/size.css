@@ -1,0 +1,46 @@
+
+/* width */
+
+.width-100per {
+    width: 100%;
+}
+.width-1140px{
+    width: 1140px;
+}
+.width-240px{
+    width: 240px;
+}
+.width-230px{
+    width: 230px;
+}
+.width-220px{
+    width: 220px;
+}
+.width-200px{
+    width: 200px;
+}
+.width-148px{
+    width: 148px;
+}
+.width-50px{
+    width: 50px;
+}
+.width-20px{
+    width: 20px;
+}
+.max-width-158px{
+    max-width: 168px;
+}
+.max-width-148px{
+    max-width: 148px;
+}
+/* height */
+.height-100per{
+    height: 100%;
+}
+.height-80px{
+    height: 80px;
+}
+.height-50px{
+    height: 50px;
+}
