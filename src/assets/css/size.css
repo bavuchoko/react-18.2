@@ -19,21 +19,35 @@
 .width-200px{
     width: 200px;
 }
+.width-160px{
+    width: 160px;
+}
 .width-148px{
     width: 148px;
 }
 .width-50px{
     width: 50px;
 }
+
+.width-31px{
+    width: 31px;
+}
 .width-20px{
     width: 20px;
 }
+.width-19px{
+    width: 19px;
+}
 .max-width-158px{
-    max-width: 168px;
+    max-width: 158px;
 }
 .max-width-148px{
     max-width: 148px;
 }
+
+
+
+
 /* height */
 .height-100per{
     height: 100%;
@@ -43,4 +57,13 @@
 }
 .height-50px{
     height: 50px;
+}
+.height-42px{
+    height: 42px;
+}
+.height-31px{
+    height: 31px;
+}
+.height-19px{
+    height: 19px;
 }

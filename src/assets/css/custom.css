@@ -8,3 +8,95 @@
     width: 300px;
     text-align: center;
 }
+
+.custom-category{
+    text-align: left;
+    text-indent: 10px;
+    color: #175ba9;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+}
+
+.custom-blog-title{
+    padding-top: 31px;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.custom-mainSetting{
+    padding: 5px 10px;
+    border: 1px solid #e5e5e5;
+    background-color: #fcfbfb;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top:50px;
+    left: 90px;
+
+}
+
+.custom-mainSetting-list > li{
+    font-weight: 700;
+    color: #4d4c4c;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.custom-mainSetting-list > li > button{
+    font-size: 14px;
+}
+.custom-categoryMenu{
+    padding: 5px 10px;
+    border: 1px solid #175ba9;
+    background-color: #fcfbfb;
+    width: 140px;
+    height: auto;
+    position: absolute;
+    top:70px;
+    right: 30px;
+
+}
+
+.custom-categoryMenu-list > li{
+
+    font-weight: 700;
+    color: #4d4c4c;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.custom-categoryMenu-list > li > button{
+    font-size: 15px;
+    color: #175ba9;
+}
+
+.coustom-search-inputOut{
+    position: fixed;
+    right: 210px;
+}
+.coustom-search-inputIn{
+    position: fixed;
+    right: 210px;
+    width: 220px;
+}
+.custom-category-button{
+    position: fixed;
+    right: 30px;
+}
+.magnifier{
+    position: absolute;
+    right: 13px;
+    top: 13px;
+}
+.custom-search-input{
+
+    width: 180px;
+    margin: 0;
+    margin-top: 3px;
+    border: none;
+    outline: none;
+    text-indent: 5px;
+    background-color: #f5f5f5;
+    height: 24px;
+    border-radius: 10px;
+
+}
