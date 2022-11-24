@@ -1,11 +1,12 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import pepe from "../../assets/images/profile/pepe.jpg";
 import anonymous from "../../assets/images/profile/anonymous-logo.jpg";
 import MainSetting from "../toggles/MainSetting";
 import Category from "../toggles/Category";
+import ClickOutside from "react-click-outsider";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlay, faAngleRight, faAngleDown, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faAngleDown, faAngleRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 
 const Header =(props) => {
 
@@ -23,6 +24,8 @@ const Header =(props) => {
     };
     const toggleSearchInput = () => {
         setIsInput(!isInput);
+        const inpuClassName = isInput? "search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative"
+            : "search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn";
     };
 
 
@@ -30,16 +33,14 @@ const Header =(props) => {
         <header className="header">
             <nav id="#header" className="width-100per back-color-white fixed zindex-100 height-80px flex" style={{borderBottom: '1px solid #f3f3f3'}}>
                 {
-                    isMenu?
-                        <MainSetting isLogin={isLogin}/>
-                        :
-                        <></>
+                    isMenu &&
+                        <MainSetting isLogin={isLogin} setIsMenu={setIsMenu} />
                 }
                 {
-                    !isCategory?
-                        <Category />
-                        :
-                        <></>
+                    isCategory &&
+
+                            <Category setIsCategory={setIsCategory}/>
+
                 }
 
                 {/*좌측 프로필, 로그인,설정 패널*/}
@@ -85,20 +86,24 @@ const Header =(props) => {
 
                 {/*우측 메뉴, 카테고리 영역*/}
                 <div className="absolute right-30px width-220px height-80px padding-top-20px flex">
+
+
                 {
-                    isInput?
-                    <div className="search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative" onClick={toggleSearchInput}>
-                        <button>
-                            <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
-                        </button>
-                    </div>
+                    !isInput?
+                        <div className="search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative" onClick={toggleSearchInput}>
+                            <button>
+                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
+                            </button>
+                        </div>
                         :
-                    <div className="search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn">
-                        <button>
-                            <input className="custom-search-input"/>
-                            <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
-                        </button>
-                    </div>
+                    <ClickOutside onClickOutside={() => setIsInput(false)}>
+                        <div className="search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn">
+                            <button>
+                                <input className="custom-search-input" />
+                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
+                            </button>
+                        </div>
+                    </ClickOutside>
                 }
 
 

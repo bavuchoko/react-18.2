@@ -1,13 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
+import ClickOutside from "react-click-outsider";
 
 
-const MainSetting = (isLogin) => {
+const MainSetting = ({isLogin ,setIsMenu}) => {
 
     const [signIn, setSignIn] = useState(isLogin);
 
 
 
     return(
+        <ClickOutside onClickOutside={() => setIsMenu(false)}>
         <div className="custom-mainSetting">
             <ul className="custom-mainSetting-list">
                 {
@@ -32,6 +34,7 @@ const MainSetting = (isLogin) => {
 
             </ul>
         </div>
+        </ClickOutside>
     )
 
 
