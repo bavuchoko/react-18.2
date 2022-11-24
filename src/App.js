@@ -12,16 +12,20 @@ import NotFound from "./pages/errors/NotFound";
 const App = () => {
   return (
       <Routes>
+
+          {/*기본 레이아웃*/}
           <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/test" element={<Test />} />
               <Route path="/url/:param" element={<UrlTest />} />
               <Route path="/query" element={<QueryTest />} />
-              <Route path="/contents" element={<ContentList />}>
-                  <Route path=":id" element={<ContentView />} />
-              </Route>
+              <Route path="/contents" element={<ContentList />} />
+              <Route path="/contents/:id" element={<ContentView />} />
           </Route>
+
+            {/*에러페이지*/}
           <Route path="*" element={<NotFound />} />
+
       </Routes>
   );
 };

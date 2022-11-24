@@ -27,6 +27,9 @@ html, body, h1, p{
 .fixed{
     position: fixed;
 }
+.absolute{
+    position: absolute;
+}
 .zindex-100{
     z-index: 100;
 }
@@ -97,25 +100,27 @@ html, body, h1, p{
 }
 
 
-/* font */
+/* *font */
 .family-noto-sans{
     font-family: 'Noto Sans KR', sans-serif;
 }
 .bold{
     font-weight: bold;
 }
-
-.font-color-646464{
-    color: #646464;
+.weigh{
+    font-weight: 400;
 }
-.font-color-7a7a7a{
-    color: #7a7a7a;
+.font-color-70706f{
+    color: #70706f;
 }
-.font-size-16px{
+.font-color-ababab{
+    color: #ababab;
+}
+.font-size-14px{
     font-size: 14px;
 }
-.font-size-13px{
-    font-size: 13px;
+.font-size-12px{
+    font-size: 12px;
 }
 
 
