@@ -45,6 +45,11 @@
     font-size: 12px;
     color: #4d4c4c;
 }
+.custom-mainSetting-list > li > a > button:hover {
+    color: #4d4c4c;
+    font-size: 13px;
+    font-weight: 900;
+}
 .custom-categoryMenu{
     padding: 5px 10px;
     border: 1px solid #175ba9;
@@ -63,9 +68,14 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
-.custom-categoryMenu-list > li > button{
+.custom-categoryMenu-list > li > a > button{
     font-size: 13px;
     color: #175ba9;
+}
+.custom-categoryMenu-list > li > a > button:hover {
+    color: #175ba9;
+    font-size: 14px;
+    font-weight: 900;
 }
 
 .coustom-search-inputOut{
@@ -97,5 +107,51 @@
     background-color: #f5f5f5;
     height: 24px;
     border-radius: 10px;
-
+}
+.custom-login-title{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 300px;
+    margin-bottom: 50px;
+}
+.custom-loginfrm{
+    position: relative;
+    width: 258px;
+    margin: 0 auto;
+}
+.custom-login-input{
+    display: block;
+    text-indent: 10px;
+    width: 250px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.custom-login-btn{
+    color: whitesmoke;
+    width: 258px;
+    height: 46px;
+    margin: 0 auto;
+    background-color: #175ba9;
+    border-radius: 4px;
+}
+.custom-loginfrm-arrowbtn{
+    display: block;
+    margin-top: 20px;
+    float: right;
+    color: #4d4c4c;
+    font-size: 13px;
+}
+.custom-msg{
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.custom-loginfrm-errMng{
+    position: absolute;
+    top: 129px;
+    left: 5px;
+    color: #9d2020;
+}
+.custom-loginfrm-arrow{
+    margin-right: 10px;
 }

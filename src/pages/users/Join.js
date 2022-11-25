@@ -5,18 +5,22 @@ import axios from "axios";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { useNavigate  } from 'react-router-dom';
-function LoginComponent() {
+function JoinComponent() {
     const dispatch = useDispatch();
     let history = useNavigate ();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [password2, setPassword2] = useState("");
 
     const [loading, setLoading] = useState(false);
     const [msg, setMsg] = useState("");
     const [errMng, setErrMng] = useState("");
+    const [passErrMng, setPassErrMng] = useState("");
+    const [pass2ErrMng, setPass2ErrMng] = useState("");
+    const [nickErrMng, setNickErrMng] = useState("");
 
 
-    const LoginFunc = (e) => {
+    const JoinFunc = (e) => {
         e.preventDefault();
         // Loading... 메세지 출력
         setMsg("Loading...");
@@ -48,9 +52,9 @@ function LoginComponent() {
     return (
         <>
             <div className="custom-loginfrm">
-                <p className="custom-login-title">로그인</p>
+                <p className="custom-login-title">등록</p>
                 <form
-                    onSubmit={LoginFunc}
+                    onSubmit={JoinFunc}
                     className="login-wrap"
                 >
                     <input
@@ -60,19 +64,36 @@ function LoginComponent() {
                         onChange={e => setUsername(e.target.value)}
                     />
                     <span className="custom-loginfrm-errMng">{errMng}</span>
+
+                    <input
+                        type="text"
+                        placeholder='닉네임'
+                        className='custom-login-input'
+                        onChange={e => setUsername(e.target.value)}
+                    />
+                    <span className="custom-loginfrm-errMng">{nickErrMng}</span>
+
                     <input
                         type="password"
                         placeholder='비밀번호'
                         className='custom-login-input'
                         onChange={e => setPassword(e.target.value)}
                     />
+                    <span className="custom-loginfrm-errMng">{passErrMng}</span>
+                    <input
+                        type="password"
+                        placeholder='비밀번호 확인'
+                        className='custom-login-input'
+                        onChange={e => setPassword2(e.target.value)}
+                    />
+                    <span className="custom-loginfrm-errMng">{pass2ErrMng}</span>
                     <br />
                     <button
                         disabled={loading}
                         type="submit"
                         className='custom-login-btn'
                     >
-                        LOGIN
+                        JOIN
                     </button>
                     <button  className="custom-loginfrm-arrowbtn" onClick={ () => {
                         history(-1);
@@ -91,4 +112,4 @@ function LoginComponent() {
     )
 }
 
-export default LoginComponent
+export default JoinComponent

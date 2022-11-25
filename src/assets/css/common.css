@@ -6,6 +6,10 @@ body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
 pre, form, fieldset, textarea, blockquote, span, * {
     font-family: 'Noto Sans KR', sans-serif;
 }
+a{
+    text-decoration: none;
+    color: #4d4c4c;
+}
 ul, li {
     text-decoration: none;
     list-style: none;
@@ -13,6 +17,7 @@ ul, li {
     padding: 0;
 }
 button{
+    font-size: 12px;
     padding: 0;
     margin: 0;
     display: inherit;
