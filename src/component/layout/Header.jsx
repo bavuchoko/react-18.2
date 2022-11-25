@@ -52,8 +52,8 @@ const Header =(props) => {
                                 <img className="width-50px height-50px border-radius-50per object-fit-none border-solid-1px" src={pepe}/>
                             </Link>
                             <div className="margin-top-5px margin-left-10px max-width-148px hover-pointer inline-block"  onClick={toggleMain}>
-                                <button className="bold font-size-14px font-color-70706f family-noto-sans">老人과 JAVA</button>
-                                <button className="font-size-12px font-color-ababab family-noto-sans weigh-400 margin-top-5px">mood</button>
+                                <button className="bold font-size-12px font-color-70706f family-noto-sans">老人과 JAVA</button>
+                                <button className="font-size-11px font-color-ababab family-noto-sans weigh-400 margin-top-5px">mood</button>
                             </div>
                         </>
                         :
@@ -62,8 +62,8 @@ const Header =(props) => {
                                 <img className="width-50px height-50px border-radius-50per object-fit-none border-solid-1px" src={anonymous}/>
                             </Link>
                             <div className="margin-top-5px margin-left-10px max-width-148px hover-pointer inline-block"  onClick={toggleMain}>
-                                <button className="bold font-size-14px font-color-70706f family-noto-sans">ANONYMOUS</button>
-                                <button className="font-size-12px font-color-ababab family-noto-sans weigh-400 margin-top-5px">mood</button>
+                                <button className="bold font-size-12px font-color-70706f family-noto-sans">ANONYMOUS</button>
+                                <button className="font-size-11px font-color-ababab family-noto-sans weigh-400 margin-top-5px">mood</button>
                             </div>
                         </>
                     }
@@ -92,7 +92,7 @@ const Header =(props) => {
                     !isInput?
                         <div className="search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative" onClick={toggleSearchInput}>
                             <button>
-                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
+                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
                             </button>
                         </div>
                         :
@@ -100,7 +100,7 @@ const Header =(props) => {
                         <div className="search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn">
                             <button>
                                 <input className="custom-search-input" />
-                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-16px font-color-70706f magnifier" />
+                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
                             </button>
                         </div>
                     </ClickOutside>

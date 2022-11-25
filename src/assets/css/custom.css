@@ -14,13 +14,13 @@
     text-indent: 10px;
     color: #175ba9;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .custom-blog-title{
     padding-top: 31px;
-    font-size: 23px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -38,18 +38,18 @@
 
 .custom-mainSetting-list > li{
     font-weight: 700;
-    color: #4d4c4c;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 .custom-mainSetting-list > li > button{
-    font-size: 14px;
+    font-size: 12px;
+    color: #4d4c4c;
 }
 .custom-categoryMenu{
     padding: 5px 10px;
     border: 1px solid #175ba9;
     background-color: #fcfbfb;
-    width: 140px;
+    width: 137px;
     height: auto;
     position: absolute;
     top:70px;
@@ -58,14 +58,13 @@
 }
 
 .custom-categoryMenu-list > li{
-
     font-weight: 700;
     color: #4d4c4c;
     margin-bottom: 10px;
     margin-top: 10px;
 }
 .custom-categoryMenu-list > li > button{
-    font-size: 15px;
+    font-size: 13px;
     color: #175ba9;
 }
 
@@ -84,8 +83,8 @@
 }
 .magnifier{
     position: absolute;
-    right: 13px;
-    top: 13px;
+    right: 15px;
+    top: 15px;
 }
 .custom-search-input{
 
