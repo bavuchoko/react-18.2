@@ -36,7 +36,7 @@ const MainSetting = ({isLogin ,setIsMenu}) => {
                         <li><Link to="/"><button>문의</button></Link></li>
                         <div className="liner"></div>
                         <li><Link to="/user"><button style={{fontSize:'12'}}>로그인</button></Link></li>
-                        <li><Link to="/join"><button>등록하기</button></Link></li>
+                        <li><Link to="/join"><button>가입</button></Link></li>
                     </>
                 }
 

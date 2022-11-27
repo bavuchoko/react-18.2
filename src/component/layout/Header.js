@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import pepe from "../../assets/images/profile/pepe.jpg";
 import anonymous from "../../assets/images/profile/anonymous-logo.jpg";
+import GitHub from "../../assets/images/github.png";
 import MainSetting from "../toggles/MainSetting";
 import Category from "../toggles/Category";
 import ClickOutside from "react-click-outsider";
@@ -14,6 +15,9 @@ const Header =(props) => {
     const [isCategory, setIsCategory] = useState(false);
     const [isLogin, setIsLogin] = useState(false);
     const [isInput, setIsInput] = useState(false);
+
+    const customNavGitIn ="width-35px height-35px absolute top-23px left-minus-240px hover-pointer"
+    const customNavGitOut ="width-35px height-35px absolute top-23px left-minus-60px hover-pointer"
 
     const toggleMain = () => {
         setIsMenu(!isMenu);
@@ -86,27 +90,24 @@ const Header =(props) => {
 
                 {/*우측 메뉴, 카테고리 영역*/}
                 <div className="absolute right-30px width-220px height-80px padding-top-20px flex">
-
-
-                {
-                    !isInput?
-                        <div className="search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative" onClick={toggleSearchInput}>
-                            <button>
-                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
-                            </button>
-                        </div>
-                        :
-                    <ClickOutside onClickOutside={() => setIsInput(false)}>
-                        <div className="search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn">
-                            <button>
-                                <input className="custom-search-input" />
-                                <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
-                            </button>
-                        </div>
-                    </ClickOutside>
-                }
-
-
+                    <img className={isInput ? customNavGitIn : customNavGitOut} onClick={() => window.open('https://github.com/bavuchoko', '_blank')} src={GitHub}/>
+                    {
+                        !isInput?
+                            <div className="search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative"  onClick={toggleSearchInput}>
+                                <button>
+                                    <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
+                                </button>
+                            </div>
+                            :
+                        <ClickOutside onClickOutside={() => setIsInput(false)}>
+                            <div className="search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn">
+                                <button>
+                                    <input className="custom-search-input" />
+                                    <FontAwesomeIcon icon={faMagnifyingGlass}  className="font-size-12px font-color-70706f magnifier" />
+                                </button>
+                            </div>
+                        </ClickOutside>
+                    }
 
 
                     <button className="width-160px height-42px border-solid-1px-blue padding22 text-center lineheight-44px font-size-14px margin-left-15px custom-category-button" onClick={toggleCategory}>

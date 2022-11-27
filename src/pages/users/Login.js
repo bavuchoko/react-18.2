@@ -1,10 +1,11 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux";
-import { loginUser } from "../../reducer/userSlice.js";
-import axios from "axios";
+import React, {useState} from "react"
+import {useDispatch} from "react-redux";
+import {loginUser} from "../../reducer/userSlice.js";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { useNavigate  } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {noAuhApi} from "../../api/instance/Instance";
+
 function LoginComponent() {
     const dispatch = useDispatch();
     let history = useNavigate ();
@@ -14,6 +15,8 @@ function LoginComponent() {
     const [loading, setLoading] = useState(false);
     const [msg, setMsg] = useState("");
     const [errMng, setErrMng] = useState("");
+
+
 
 
     const LoginFunc = (e) => {
@@ -26,24 +29,30 @@ function LoginComponent() {
             username,
             password
         }
-        axios.post("apit", body)
-            .then(res => {
-                console.log(body)
+        setLoading(true);
+        try {
+            noAuhApi.get(
+                '/user/alluser'
+            ).then(res => {
+                console.log(res)
                 // 2순위 통신이 끝나야 작동. 통신 이후 클릭이 되도록.
                 setLoading(false);
                 // Loading... 메세지가 통신이 끝난 후 1.5초 이후 없어짐.
                 setTimeout(() => setMsg(""), 1500);
                 // code = 데이터 상태
-                const code = res.data.code;
-                if (code === 200) {
+                const status = res.status;
+                if (status === 200) {
                     dispatch(loginUser(res.data.userInfo));
                 } else {
                     alert("아이디 또는 비밀번호를 확인하세요.")
                 }
             })
-        // 1순위 로그인 버튼을 누르면 클릭이 안되도록.
-        setLoading(true);
+        }catch (error){
+            console.log(error)
+        }
+
     }
+
 
     return (
         <>

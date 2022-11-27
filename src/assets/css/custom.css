@@ -125,7 +125,7 @@
     width: 250px;
     height: 35px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 .custom-login-btn{
     color: whitesmoke;
@@ -135,6 +135,7 @@
     background-color: #175ba9;
     border-radius: 4px;
 }
+
 .custom-loginfrm-arrowbtn{
     display: block;
     margin-top: 20px;
@@ -148,10 +149,35 @@
 }
 .custom-loginfrm-errMng{
     position: absolute;
+    font-size: 13px;
     top: 129px;
     left: 5px;
     color: #9d2020;
 }
+.custom-loginfrm-errMng-pass{
+    top: 261px;
+}
+.custom-loginfrm-errMng-pass2{
+    top: 327px;
+}
 .custom-loginfrm-arrow{
     margin-right: 10px;
+}
+.custom-nav-git-in{
+    position: absolute;
+    top:3px;
+    left: -60px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: none;
+}
+.custom-nav-git-out{
+    position: absolute;
+    top:3px;
+    left: -60px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: none;
 }
