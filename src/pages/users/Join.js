@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {loginUser} from "../../reducer/userSlice.js";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {noAuhApi} from "../../api/instance/Instance";
 import Button from "../../component/Button"
 import * as fnc from "../../component/validTester/Test"
@@ -104,6 +104,7 @@ function JoinComponent() {
                 const status = res.status;
                 if (status === 200) {
                     dispatch(loginUser(res.data));
+                    history(-1)
                 } else {
                     alert("아이디 또는 비밀번호를 확인하세요.")
                 }

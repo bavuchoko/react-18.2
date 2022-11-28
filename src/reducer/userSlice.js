@@ -1,28 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const userSlice = createSlice({
-    name: "user",
-    initialState: {
-        username: "",
-        nickname :"",
-        accessToken: "",
-        isLoading: false, // optional
-        isLogin: null,
-    },
-    reducers: {
-        // login 성공 시
+const initialState = {
+    username : '',
+    nickname : '',
+    accessToken : '',
+    isLogin : null
+};
+
+const userSlice = createSlice ({
+    name : 'user',
+    initialState,
+    reducers : {
+        //로그인 성공시
         loginUser: (state, action) => {
-            console.log(action.payload.username)
-            console.log(state)
-            // name, id에 API 값 받아오기
             state.username = action.payload.username;
             state.nickname = action.payload.nickname;
-            state.accessToken = action.payload.accessToken;
-            state.isLogin = true;
-            // state 변화를 알림
+            state.accessToken = action.payload.token;
+            state.isLogin = action.payload.success;
             return state;
         },
-        // login 실패 시
+        //로그인 실패시
         clearUser: (state) => {
             // name, id 값을 비워줌.
             state.username = "";
@@ -32,8 +29,14 @@ export const userSlice = createSlice({
             // state 변화를 알림
             return state;
         },
-    },
+    }
 });
 
-export const { loginUser, clearUser } = userSlice.actions;
-export default userSlice.reducer;
+export const { loginUser,clearUser } = userSlice.actions;
+
+export const selectUsername = (state) => state.user.username;
+export const selectNickname = (state) => state.user.nickname;
+export const selectAccessToken = (state) => state.user.accessToken;
+export const selectIsLogin = (state) => state.user.isLogin;
+
+export  default userSlice;

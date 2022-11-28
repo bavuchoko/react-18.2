@@ -3,8 +3,8 @@ import {useDispatch} from "react-redux";
 import {loginUser} from "../../reducer/userSlice.js";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {useNavigate} from 'react-router-dom';
 import {noAuhApi} from "../../api/instance/Instance";
+import {useNavigate} from "react-router-dom";
 
 function LoginComponent() {
     const dispatch = useDispatch();
@@ -15,8 +15,6 @@ function LoginComponent() {
     const [loading, setLoading] = useState(false);
     const [msg, setMsg] = useState("");
     const [errMng, setErrMng] = useState("");
-
-
 
 
     const LoginFunc = (e) => {
@@ -31,10 +29,9 @@ function LoginComponent() {
         }
         setLoading(true);
         try {
-            noAuhApi.get(
-                '/user/alluser'
+            noAuhApi.post(
+                '/user/authenticate',body
             ).then(res => {
-                console.log(res)
                 // 2순위 통신이 끝나야 작동. 통신 이후 클릭이 되도록.
                 setLoading(false);
                 // Loading... 메세지가 통신이 끝난 후 1.5초 이후 없어짐.
@@ -42,7 +39,8 @@ function LoginComponent() {
                 // code = 데이터 상태
                 const status = res.status;
                 if (status === 200) {
-                    dispatch(loginUser(res.data.userInfo));
+                    dispatch(loginUser(res.data));
+                    history(-1)
                 } else {
                     alert("아이디 또는 비밀번호를 확인하세요.")
                 }

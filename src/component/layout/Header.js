@@ -8,8 +8,12 @@ import Category from "../toggles/Category";
 import ClickOutside from "react-click-outsider";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDown, faAngleRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {useSelector} from "react-redux";
+
 
 const Header =(props) => {
+
+    const user = useSelector(state => state.user)
 
     const [isMenu, setIsMenu] = useState(false);
     const [isCategory, setIsCategory] = useState(false);
@@ -27,6 +31,7 @@ const Header =(props) => {
         setIsCategory(!isCategory);
     };
     const toggleSearchInput = () => {
+console.log(user)
         setIsInput(!isInput);
         const inpuClassName = isInput? "search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative"
             : "search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn";
