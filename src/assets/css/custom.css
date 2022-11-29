@@ -181,3 +181,24 @@
     border-radius: 50%;
     object-fit: none;
 }
+.custom-checker{
+    font-size: 20px;
+    position: absolute;
+    left: -30px;
+}
+.custom-checker:first-child{
+    top: 100px;
+}
+.custom-loginfrm-errMng + .custom-checker{
+    top: 230px;
+}
+.custom-loginfrm-errMng-pass + .custom-checker{
+    top: 297px;
+}
+
+.custom-pass{
+    color: green;
+}
+.custom-notallowed{
+    color: darkred;
+}

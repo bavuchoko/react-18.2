@@ -8,6 +8,8 @@ import {noAuhApi} from "../../api/instance/Instance";
 import Button from "../../component/Button"
 import * as fnc from "../../component/validTester/Test"
 import {checkPasswordSame} from "../../component/validTester/Test";
+import {faCheck} from "@fortawesome/free-solid-svg-icons";
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
 
 function JoinComponent() {
     const dispatch = useDispatch();
@@ -38,6 +40,8 @@ function JoinComponent() {
 
     }
 
+    const pass = <FontAwesomeIcon icon={faCheck}  className="custom-checker custom-pass"/>
+    const notallowed = <FontAwesomeIcon icon={faXmark}  className="custom-checker custom-notallowed"/>
 
     const validateUsername = (value) => {
         setUsernameValid(false);
@@ -96,7 +100,6 @@ function JoinComponent() {
                 '/user/join',body
             ).then(res => {
                 console.log(res)
-                // 2순위 통신이 끝나야 작동. 통신 이후 클릭이 되도록.
                 setLoading(false);
                 // Loading... 메세지가 통신이 끝난 후 1.5초 이후 없어짐.
                 setTimeout(() => setMsg(""), 1500);
@@ -111,6 +114,7 @@ function JoinComponent() {
             })
         }catch (error){
             console.log(error)
+            setMsg(error)
         }
     }
 
@@ -122,6 +126,7 @@ function JoinComponent() {
                     onSubmit={JoinFunc}
                     className="login-wrap"
                 >
+                    { usernameValid? pass : notallowed}
                     <input
                         type="text"
                         placeholder='아이디@email.com'
@@ -129,7 +134,6 @@ function JoinComponent() {
                         onChange={e => validateUsername(e.target.value)}
                     />
                     <span className="custom-loginfrm-errMng">{errMng}</span>
-
                     <input
                         type="text"
                         placeholder='닉네임'
@@ -138,6 +142,7 @@ function JoinComponent() {
                     />
                     <span className="custom-loginfrm-errMng">{nickErrMng}</span>
 
+                    { passVailid? pass : notallowed}
                     <input
                         type="password"
                         placeholder='비밀번호'
@@ -145,6 +150,7 @@ function JoinComponent() {
                         onChange={e => validatePassword(e.target.value)}
                     />
                     <span className="custom-loginfrm-errMng custom-loginfrm-errMng-pass">{passErrMng}</span>
+                    { passSameVailid? pass : notallowed}
                     <input
                         type="password"
                         placeholder='비밀번호 확인'
@@ -164,6 +170,7 @@ function JoinComponent() {
                         history(-1);
                     } } >
                     <FontAwesomeIcon icon={faArrowLeft}  className="custom-loginfrm-arrow"/>
+
                         뒤로가기
                     </button>
                     <div
