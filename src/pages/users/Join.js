@@ -1,15 +1,12 @@
 import React, {useEffect, useState} from "react"
 import {useDispatch} from "react-redux";
 import {loginUser} from "../../reducer/userSlice.js";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft, faCheck, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {noAuhApi} from "../../api/instance/Instance";
 import Button from "../../component/Button"
 import * as fnc from "../../component/validTester/Test"
-import {checkPasswordSame} from "../../component/validTester/Test";
-import {faCheck} from "@fortawesome/free-solid-svg-icons";
-import {faXmark} from "@fortawesome/free-solid-svg-icons";
 
 function JoinComponent() {
     const dispatch = useDispatch();

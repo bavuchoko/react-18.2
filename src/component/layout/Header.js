@@ -25,7 +25,7 @@ const Header =(props) => {
 
     useEffect(() => {
         setIsLogin(user.isLogin);
-    }, user);
+    }, [user]);
 
     const toggleMain = () => {
         setIsMenu(!isMenu);

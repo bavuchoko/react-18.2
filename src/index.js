@@ -6,12 +6,12 @@ import "./assets/css/common.css"
 import "./assets/css/color.css"
 import "./assets/css/custom.css"
 import App from './App';
-import { Provider } from "react-redux";
+import {Provider} from "react-redux";
 import store from "./reducer/store.js";
 import {BrowserRouter as Router} from "react-router-dom";
 
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react";
+import {persistStore} from "redux-persist";
 
 export let persistor = persistStore(store);
 
