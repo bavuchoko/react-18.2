@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
 import pepe from "../../assets/images/profile/pepe.jpg";
 import anonymous from "../../assets/images/profile/anonymous-logo.jpg";
@@ -23,6 +23,10 @@ const Header =(props) => {
     const customNavGitIn ="width-35px height-35px absolute top-23px left-minus-240px hover-pointer"
     const customNavGitOut ="width-35px height-35px absolute top-23px left-minus-60px hover-pointer"
 
+    useEffect(() => {
+        setIsLogin(user.isLogin);
+    }, user);
+
     const toggleMain = () => {
         setIsMenu(!isMenu);
     };
@@ -31,7 +35,6 @@ const Header =(props) => {
         setIsCategory(!isCategory);
     };
     const toggleSearchInput = () => {
-console.log(user)
         setIsInput(!isInput);
         const inpuClassName = isInput? "search-box border-solid-r4-1px padding-5px width-31px height-31px coustom-search-inputOut relative"
             : "search-box border-solid-r4-1px padding-5px  width-31px height-31px coustom-search-inputIn";
@@ -43,7 +46,7 @@ console.log(user)
             <nav id="#header" className="width-100per back-color-white fixed zindex-100 height-80px flex" style={{borderBottom: '1px solid #f3f3f3'}}>
                 {
                     isMenu &&
-                        <MainSetting isLogin={isLogin} setIsMenu={setIsMenu} />
+                        <MainSetting isLogin={isLogin} setIsMenu={setIsMenu} setIsLogin={setIsLogin}/>
                 }
                 {
                     isCategory &&

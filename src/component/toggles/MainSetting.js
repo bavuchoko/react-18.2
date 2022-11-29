@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {clearUser} from "../../reducer/userSlice";
 
-const MainSetting = ({isLogin ,setIsMenu}) => {
+const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
 
     const [signIn, setSignIn] = useState(isLogin);
 
@@ -13,8 +13,12 @@ const MainSetting = ({isLogin ,setIsMenu}) => {
     const LogoutFunc = () => {
         dispatch(clearUser(user));
         setSignIn(false)
-        alert(signIn)
+        setIsLogin(false)
     }
+
+    useEffect(() => {
+        setIsLogin(user.isLogin);
+    }, user);
 
     return(
         <ClickOutside onClickOutside={() => setIsMenu(false)}>
