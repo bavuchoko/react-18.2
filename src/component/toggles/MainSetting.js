@@ -3,7 +3,7 @@ import ClickOutside from "react-click-outsider";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {clearUser, loginUser} from "../../reducer/userSlice";
-import {noAuhApi} from "../../api/instance/Instance";
+import {needAuthApi, noAuhApi} from "../../api/instance/Instance";
 
 const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
 
@@ -16,7 +16,7 @@ const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
         setSignIn(false)
         setIsLogin(false)
         try {
-            noAuhApi.get(
+            needAuthApi.get(
                 '/user/logout'
             ).then(res => {
                 console.log(res)
