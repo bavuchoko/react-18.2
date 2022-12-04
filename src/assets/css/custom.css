@@ -1,3 +1,8 @@
+#header{
+
+    backdrop-filter:saturate(200%) blur(3px);
+}
+
 .blogname{
     letter-spacing: 0.3px;
     font-size: 23px;
@@ -144,6 +149,7 @@
     font-size: 13px;
 }
 .custom-msg{
+    color: #e00f0f;
     margin-left: 5px;
     margin-top: 15px;
 }

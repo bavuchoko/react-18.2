@@ -49,7 +49,7 @@ const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
                 {
                     signIn?
                     <>
-                        <li><Link to="/"><button>글쓰기</button></Link></li>
+                        <li><Link to="/api/docs"><button>API docs</button></Link></li>
                         <li><Link to="/"><button>테스트1</button></Link></li>
                         <li><Link to="/"><button>테스트2</button></Link></li>
                         <li><Link to="/"><button>내정보 보기</button></Link></li>
@@ -59,7 +59,7 @@ const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
                     </>
                     :
                     <>
-                        <li><Link to="/"><button>문의</button></Link></li>
+                        <li><Link to="/api/docs"><button>API docs</button></Link></li>
                         <div className="liner"></div>
                         <li><Link to="/user"><button style={{fontSize:'12'}}>로그인</button></Link></li>
                         <li><Link to="/join"><button>가입</button></Link></li>

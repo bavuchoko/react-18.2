@@ -20,7 +20,7 @@ function LoginComponent() {
     const LoginFunc = (e) => {
         e.preventDefault();
         // Loading... 메세지 출력
-        setMsg("Loading...");
+        setMsg("로딩중...");
 
         // API
         let body = {
@@ -42,14 +42,20 @@ function LoginComponent() {
                     dispatch(loginUser(res.data));
                     history(-1)
                 } else {
-                    alert("아이디 또는 비밀번호를 확인하세요.")
+                    setMsg("유저정보 불일치");
+                    setLoading(false);
                 }
             })
         }catch (error){
-            console.log(error)
+            console.log(error);
+            setLoading(false);
         }
 
     }
+    window.addEventListener('unhandledrejection', function(event) {
+        setMsg("서버가 많이 아픕니다...");
+        setLoading(false);
+    });
 
 
     return (

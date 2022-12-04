@@ -43,7 +43,7 @@ const Header =(props) => {
 
     return (
         <header className="header">
-            <nav id="#header" className="width-100per back-color-white fixed zindex-100 height-80px flex" style={{borderBottom: '1px solid #f3f3f3'}}>
+            <nav id="header" className="width-100per fixed zindex-100 height-80px flex" style={{borderBottom: '1px solid #f3f3f3'}}>
                 {
                     isMenu &&
                         <MainSetting isLogin={isLogin} setIsMenu={setIsMenu} setIsLogin={setIsLogin}/>
