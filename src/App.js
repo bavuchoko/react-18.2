@@ -8,6 +8,7 @@ import JoinPage from './pages/users/Join';
 import QueryTest from './pages/QueryTest';
 import ContentList from './pages/contents/ContentList';
 import ContentView from './pages/contents/ContentView';
+import ContentWrite from './pages/contents/ContentWrite';
 import NotFound from "./pages/errors/NotFound";
 
 
@@ -23,8 +24,9 @@ const App = () => {
               <Route path="/query" element={<QueryTest />} />
               <Route path="/contents" element={<ContentList />} />
               <Route path="/contents/:id" element={<ContentView />} />
+              <Route path="/contents/write" element={<ContentWrite />} />
           </Route>
-          
+
             {/* 레이아웃 제외 단독페이지 */}
           <Route path="/user" element={<LoginPage />} />
           <Route path="/join" element={<JoinPage />} />

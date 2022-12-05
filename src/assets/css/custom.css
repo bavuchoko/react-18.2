@@ -208,3 +208,35 @@
 .custom-notallowed{
     color: darkred;
 }
+.custom-editor-container{
+    padding: 100px;
+}
+.custom-subject-tag{
+    display: inline-block;
+    margin-right: 20px;
+}
+.custom-subject-input{
+    color: #4d4c4c;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px dotted #cecece;
+    outline: none;
+    width: calc(100% - 200px);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    text-indent: 15px;
+    font-size: 26px;
+}
+.custom-submit-btn{
+    margin-top: 30px;
+
+    display: inline-block;
+    float: right;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    width: 90px;
+    height: 42px;
+    background-color: #35c435;
+
+}
