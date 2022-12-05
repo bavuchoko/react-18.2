@@ -4,7 +4,7 @@ const Layout = () => {
     return (
         <div>
            <Header/>
-            <main>
+            <main id="top-container">
                 <Outlet />
             </main>
         </div>

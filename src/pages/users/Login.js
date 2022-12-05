@@ -53,7 +53,7 @@ function LoginComponent() {
 
     }
     window.addEventListener('unhandledrejection', function(event) {
-        setMsg("서버가 많이 아픕니다...");
+        setMsg("서버가 응답하지 않습니다.");
         setLoading(false);
     });
 
