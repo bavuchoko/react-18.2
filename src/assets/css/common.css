@@ -6,8 +6,12 @@ body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
 pre, form, fieldset, textarea, blockquote, span, * {
     font-family: 'Noto Sans KR', sans-serif;
 }
-
+#root{;
+}
 #top-container{
+    min-height: calc(100vh - 326px);
+    background-color: white;
+
     width: 1280px;
     margin: 0 auto;
 }
@@ -89,6 +93,9 @@ html, body, h1, p{
 .padding-15-0-0-30{
     padding: 15px 0 0 30px;
 }
+.padding-15-0-0-60{
+    padding: 15px 0 0 60px;
+}
 .padding-top-20px{
     padding-top: 20px;
 }
@@ -99,6 +106,9 @@ html, body, h1, p{
 /* *margin */
 .margin-bottom-80px{
     padding-bottom: 80px;
+}
+.margin-bottom-70px{
+    padding-bottom: 70px;
 }
 .margin-top-15px{
     margin-top: 15px;

@@ -52,7 +52,7 @@ const MainSetting = ({isLogin ,setIsMenu,setIsLogin}) => {
                         <li><Link to="/api/docs"><button>API docs</button></Link></li>
                         <li><Link to="/"><button>테스트1</button></Link></li>
                         <li><Link to="/"><button>테스트2</button></Link></li>
-                        <li><Link to="/"><button>내정보 보기</button></Link></li>
+                        <li><Link to="/settings"><button>내정보 보기</button></Link></li>
                         <div className="liner"></div>
                         <li onClick={() => LogoutFunc()}><Link to="#"><button>로그아웃</button></Link></li>
 
