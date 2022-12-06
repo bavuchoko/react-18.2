@@ -4,8 +4,6 @@ import pepe from "../../assets/images/profile/pepe.jpg";
 import anonymous from "../../assets/images/profile/anonymous-logo.jpg";
 import GitHub from "../../assets/images/github.png";
 import MainSetting from "../toggles/MainSetting";
-import Category from "../toggles/Category";
-import ClickOutside from "react-click-outsider";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleDown, faAngleRight, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {useSelector} from "react-redux";
@@ -22,12 +20,16 @@ const Header =(props) => {
     const [isInput, setIsInput] = useState(false);
     const [list, setList] = useState(false);
     const [subShow, setSubShow] = useState(false);
+    const [topMenu, setTopMenu] = useState("");
 
+    const tm =["API DOCS", "JAVA","SPRING","DATABASE"]
     const arr =["COLLECTION","JAVA","THREAD"];
+    const arr2 =["C12e1awdaw","12awd","THREAD", "aseiojawd","seghdgr","awghtrht","123fsb","adasdfe"];
 
-    const mouseOverMenu = (e) => {
-        console.log(e)
-        setSubShow(true)
+    const mouseOverMenu = (tms, idx) => {
+            setTopMenu(idx.index)
+            setSubShow(true)
+            setList(arr2)
     };
 
 
@@ -52,6 +54,7 @@ const Header =(props) => {
     useEffect(() => {
         setIsLogin(user.isLogin);
     }, [user]);
+
 
 
     return (
@@ -101,16 +104,16 @@ const Header =(props) => {
                 {/*중앙 정보패널*/}
                 <div style={{width : "calc(100%  - 540px)", textAlign:'left'}}>
                     <ul style={{display:"flex"}} className="main-nav-list">
-                        <li onMouseOver={e => mouseOverMenu("a")}
-                            ><Link to="/"><button >API DOCS</button> </Link></li>
-                        <li onMouseOver={e => mouseOverMenu("a")}
-                            ><Link to="/"><button>JAVA</button> </Link></li>
-                        <li onMouseOver={e => mouseOverMenu("a")}
-                            ><Link to="/"><button>SPRING</button> </Link></li>
-                        <li onMouseOver={e => mouseOverMenu("a")}
-                            ><Link to="/"><button>DATABASE</button> </Link></li>
+                        {tm.map((tms, index) => (
+                            <li className="relative"  onMouseOver={e => mouseOverMenu({tms},{index})}
+                                // onMouseOut={e=>mouseOutMenu(e)}
+                            ><Link to="/"><button >{tms}</button> </Link>
+                                    {(subShow && (index==topMenu)) && <UnderMenu list={list} subShow={subShow}/>}
+                            </li>
+                        ))}
                     </ul>
                 </div>
+                {/*<div className="width-100per back-color-white"></div>*/}
 
 
 
@@ -139,8 +142,9 @@ const Header =(props) => {
 
                 </div>
             </nav>
-            { subShow &&<UnderMenu list={list}/> }
-            <div className="margin-bottom-70px "></div>
+
+            <div className="margin-bottom-70px"></div>
+
 
         </header>
     )
