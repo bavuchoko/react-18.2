@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import pepe from "../../assets/images/profile/pepe.jpg";
 import anonymous from "../../assets/images/profile/anonymous-logo.jpg";
@@ -50,6 +50,7 @@ const Header =(props) => {
 
     };
 
+    const xref = useRef()
 
     useEffect(() => {
         setIsLogin(user.isLogin);
@@ -67,7 +68,7 @@ const Header =(props) => {
                 }
 
                 {/*좌측 프로필, 로그인,설정 패널*/}
-                <div className="float-left width-240px  padding-15-0-0-60 flex">
+                <div className="float-left width-240px  padding-15-0-0-60 flex"  onMouseOver={mouseOutMenu}>
                         {
                             isLogin ?
                         <>
@@ -82,7 +83,7 @@ const Header =(props) => {
                         :
                         <>
                             <Link className="text-deco-none color-black" to="/" >
-                                <img className="width-50px height-50px border-radius-50per object-fit-none border-solid-1px" src={anonymous}/>
+                                <img className="width-43px height-43px border-radius-50per object-fit-none border-solid-1px" src={anonymous}/>
                             </Link>
                             <div className="margin-top-5px margin-left-10px max-width-148px hover-pointer inline-block"  onClick={toggleMain}>
                                 <button className="bold font-size-12px font-color-70706f family-noto-sans">ANONYMOUS</button>
@@ -102,17 +103,19 @@ const Header =(props) => {
                 </div>
 
                 {/*중앙 정보패널*/}
-                <div style={{width : "calc(100%  - 540px)", textAlign:'left'}}>
-                    <ul style={{display:"flex"}} className="main-nav-list">
-                        {tm.map((tms, index) => (
-                            <li className="relative"  onMouseOver={e => mouseOverMenu({tms},{index})}
-                                // onMouseOut={e=>mouseOutMenu(e)}
-                            ><Link to="/"><button >{tms}</button> </Link>
-                                    {(subShow && (index==topMenu)) && <UnderMenu list={list} subShow={subShow}/>}
-                            </li>
-                        ))}
-                    </ul>
+                <div style={{textAlign:'left'}} >
+                    <div>
+                        <ul style={{display:"flex"}} className="main-nav-list">
+                            {tm.map((tms, index) => (
+                                <li className="relative"  onMouseOver={e => mouseOverMenu({tms},{index})}
+                                ><Link to="/"><button >{tms}</button> </Link>
+                                        {(subShow && (index==topMenu)) && <UnderMenu list={list} mouseOutMenu={mouseOutMenu} />}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
+                    <div style={{width:"300px"}} onMouseOver={mouseOutMenu}></div>
                 {/*<div className="width-100per back-color-white"></div>*/}
 
 

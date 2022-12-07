@@ -1,12 +1,11 @@
-import React,{useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Link} from "react-router-dom";
 import { useEffect,useLayoutEffect } from 'react';
 
-const UnderMenu = ({list}) => {
+const UnderMenu = ({list, mouseOutMenu}) => {
     useLayoutEffect(() => {
             setMenus(list)
             setLength(list.length)
-
     }, [list]);
 
 
@@ -15,7 +14,7 @@ const UnderMenu = ({list}) => {
     const [menus, setMenus] = useState(list);
     const [length, setLength] = useState(0);
     return(<>
-        <div className="undermenu-div boder-b-rgb  absolute">
+        <div id="temp" className="undermenu-div boder-b-rgb  absolute" onMouseOut={mouseOutMenu} >
             <div className="width-100per back-color-white"></div>
             <div className="undermenu-inner-div">
                 <table>
@@ -34,7 +33,7 @@ const UnderMenu = ({list}) => {
                             <tr>
                                 {menus.map((list, index) => (
                                     index < 5 ?
-                                        <td className="td-submenu" key={index}><Link to="/">
+                                        <td className="td-submenu" key={index}><Link to="/contents">
                                             <button className="manu-name">{list}</button>
                                         </Link></td>
                                         : <></>
@@ -43,7 +42,7 @@ const UnderMenu = ({list}) => {
                             <tr>
                                 {menus.map((list, index) => (
                                     index >= 5 ?
-                                        <td className="td-submenu" key={index}><Link to="/">
+                                        <td className="td-submenu" key={index}><Link to="/contents">
                                             <button className="manu-name">{list}</button>
                                         </Link></td>
                                         : <></>

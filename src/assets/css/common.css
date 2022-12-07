@@ -6,14 +6,28 @@ body, talbe, th, td, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,p
 pre, form, fieldset, textarea, blockquote, span, * {
     font-family: 'Noto Sans KR', sans-serif;
 }
-#root{;
+
+#root{
+    /*background-color: #1c2431;*/
+}
+#home{
+    background-color: #1c2431;
+    min-height: calc(100vh - 70px);
 }
 #top-container{
-    min-height: calc(100vh - 326px);
     background-color: white;
-
+    /*min-height: calc(100vh - 326px);*/
+    min-height: calc(100vh - 70px);
+    /*background-color: #1c2431;*/
+    ;
     width: 1280px;
     margin: 0 auto;
+}
+.main-img{
+    padding-top: 100px;
+    display: block;
+    margin: 0 auto;
+    width: 700px;
 }
 a{
     text-decoration: none;
@@ -112,6 +126,9 @@ html, body, h1, p{
 }
 .margin-bottom-70px{
     padding-bottom: 70px;
+}
+.margin-top-100px{
+    margin-top: 100px;
 }
 .margin-top-15px{
     margin-top: 15px;

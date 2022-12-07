@@ -1,6 +1,5 @@
 #header{
     background-color: white;
-    border-bottom: 1px solid #eaeaea;
     backdrop-filter:saturate(200%) blur(3px);
 }
 
@@ -18,7 +17,8 @@
     width: 100%;
     height: 150px;
     padding: 56px 0px 40px 0px;
-    background-color: rgb(250, 250, 250);
+    /*background-color: rgb(250, 250, 250);*/
+    background-color: #1c2431;
     border-bottom: 1px solid rgb(229, 229, 229);
 }
 .custom-category{
@@ -46,6 +46,7 @@
     top:50px;
     left: 90px;
     box-shadow: 6px 8px 13px #dbdbdb;
+    z-index: 100;
 }
 
 .custom-mainSetting-list > li{
@@ -258,21 +259,25 @@ ul.main-nav-list > li > a{
     color: inherit;
 }
 ul.main-nav-list > li > a > button{
-    color: inherit;
+    color: rgb(34,34,34);
     font-size: 12px;
 }
 
 
 ul.main-nav-list > li:hover{
     cursor: pointer;
-    color: #19ce60;
-    border-bottom: 4px solid #19ce60;
+    /*color: #19ce60;*/
+    color: #1c2431;
+    /*border-bottom: 4px solid #19ce60;*/
+    border-bottom: 4px solid #1c2431;
 }
 
 ul.main-nav-list > li:hover {
     cursor: pointer;
-    color: #19ce60;
-    border-bottom: 4px solid #19ce60;
+    /*color: #19ce60;*/
+    color: #1c2431;
+    /*border-bottom: 4px solid #19ce60;*/
+    border-bottom: 4px solid #1c2431;
 }
 
 
@@ -291,19 +296,30 @@ ul.main-nav-list > li:hover {
 }
 .undermenu-inner-div >table >tbody > tr > td {
     padding: 8px 70px 8px 0px;
+    min-width: 90px;
 }
 
 .undermenu-inner-div >table > tr > td > a > button:hover{
-    color: #19ce60;
+    /*color: #19ce60;*/
+    color: #1c2431;
 }
 
 .manu-name {
+    color: rgb(34,34,34);
     font-size: 12px;
 }
 .td-submenu:hover.td-submenu>a>button{
-    color: #19ce60;
+    /*color: #19ce60;*/
+    scale: 1.1;
+    font-weight: 800;
+    color: #1c2431;
 }
 
 .boder-b-rgb{
+    border-top: 1px solid rgb(229, 229, 229);
     border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+#home > p{
+    color: white;
 }

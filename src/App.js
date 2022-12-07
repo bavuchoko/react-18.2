@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from "./layout/Layout";
+import HomeLayout from "./layout/HomeLayout";
 import Test from './pages/Test';
 import Home from './pages/Home';
 import UrlTest from './pages/UrlTest';
@@ -22,8 +23,10 @@ const App = () => {
       <Routes>
 
           {/*기본 레이아웃*/}
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<HomeLayout />}>
               <Route index element={<Home />} />
+          </Route>
+          <Route path="/" element={<Layout />}>
               <Route path="/test" element={<Test />} />
               <Route path="/url/:param" element={<UrlTest />} />
               <Route path="/query" element={<QueryTest />} />

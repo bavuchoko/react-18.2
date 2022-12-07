@@ -1,21 +1,11 @@
-import { Link } from 'react-router-dom';
-
+import terminal from "../assets/images/terminal.png";
+import React from "react";
 
 const Home = () => {
     return (
-        <div>
+        <div id="home">
 
-            <h1>홈</h1>
-            <p>가장 먼저 보여지는 페이지입aawdawdawdawdlijsfa;loiajsef;lsajief;lasfiejs;liefjs;lefijs;efloijs;lfeisjeflisjfl;isjfel;isajfl;isjefsleifjslei;fjsl;efijsl;efijselfijsl;fijsleifjslfeijsliefjsleifjselfijselfijselfijwesssssssssssss니다.</p>
-            <ul>
-                <li>
-                    <Link to="/test">소개</Link>
-                </li>
-                <li>
-                    <Link to="/contents">게시글 리스트</Link>
-                </li>
-
-            </ul>
+            <img className="main-img" src={terminal}/>
         </div>
     );
 };
